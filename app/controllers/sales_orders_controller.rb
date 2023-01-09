@@ -5,12 +5,12 @@ class SalesOrdersController < ApplicationController
 
     def index
         sales_orders = SalesOrder.all
-        render json: sales_orders, include: :products
+        render json: sales_orders
     end
 
     def show
         sales_order = SalesOrder.find_by(id: params[:id])
-        render json: sales_order, include: :products 
+        render json: sales_order
     end
 
     def create
